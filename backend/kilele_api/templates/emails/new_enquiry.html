@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>New enquiry</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f8f1e4;font-family:Arial,Helvetica,sans-serif;color:#3d3328;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f8f1e4;padding:32px 16px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background-color:#ffffff;border-radius:20px;overflow:hidden;">
+          <tr>
+            <td style="background-color:#d99525;padding:28px 32px;">
+              <p style="margin:0;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#3d3328;font-weight:bold;">Kilele Safaris</p>
+              <h1 style="margin:10px 0 0;font-size:26px;font-weight:normal;color:#3d3328;">New enquiry received</h1>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:32px;">
+              <p style="margin:0 0 20px;font-size:16px;">A traveller just sent an enquiry. Reply within 24 hours.</p>
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:15px;">
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid #ece6da;width:140px;color:#7a6d5c;">Name</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #ece6da;font-weight:bold;">{{ enquiry.name }}</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid #ece6da;color:#7a6d5c;">Email</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #ece6da;"><a href="mailto:{{ enquiry.email }}" style="color:#d99525;">{{ enquiry.email }}</a></td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid #ece6da;color:#7a6d5c;">Phone</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #ece6da;">{{ enquiry.phone|default:"—" }}</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid #ece6da;color:#7a6d5c;">Trip</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #ece6da;">{{ trip_name }}</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid #ece6da;color:#7a6d5c;">Dates</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #ece6da;">{{ date_range }}</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid #ece6da;color:#7a6d5c;">Guests</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #ece6da;">{{ enquiry.adults }} adult{{ enquiry.adults|pluralize }}, {{ enquiry.children }} child{{ enquiry.children|pluralize }}</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid #ece6da;color:#7a6d5c;">Message</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #ece6da;">{{ enquiry.message|default:"—"|linebreaksbr }}</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid #ece6da;color:#7a6d5c;">IP address</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #ece6da;font-family:monospace;font-size:13px;">{{ enquiry.ip_address|default:"—" }}</td>
+                </tr>
+              </table>
+              <p style="margin:28px 0 0;">
+                <a href="{{ admin_url }}" style="display:inline-block;background-color:#d99525;color:#ffffff;text-decoration:none;padding:12px 24px;border-radius:999px;font-weight:bold;">View in admin</a>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#f8f1e4;padding:20px 32px;text-align:center;font-size:12px;color:#9a8d7a;">
+              Reference {{ enquiry.id }} · Kilele Safaris · Arusha, Tanzania
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

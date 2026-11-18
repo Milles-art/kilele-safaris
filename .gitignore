@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+backend/.venv/
+__pycache__/
+*.py[cod]
+
+# Build output
+dist/
+
+# Secrets & local config
+.env
+backend/kilele_api/.env
+*.log
+
+# Database & backups (local data)
+*.sqlite3
+*.sqlite3-journal
+backend/kilele_api/backups/
+backend/kilele_api/.cache/
+backend/kilele_api/logs/
+
+# OS / editor
+.DS_Store
+.vscode/
+*.swp
